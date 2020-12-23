@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BitConin Core</title>
+    <script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/daohang.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/scroll.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/daohang.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+</head>
+<body>
+<form method="post" action ="home">
+
+</form>
+<div id="scrollDiv" >
+    <ul>
+        <li>思安而念 <a href="https://xydh.fun/Sianernian">友情链接</a></li>
+        <li>诗败了，尽莉了，惠赢的！</li>
+        <li>先有圣人后有天</li>
+        <li>我惠美如画中仙</li>
+        <li>这是公告标题的第五行</li>
+        <li>这是公告标题的第六行</li>
+        <li>这是公告标题的第七行</li>
+        <li>这是公告标题的第八行</li>
+    </ul>
+</div>
+
+
+<div id="div1">
+    <h3>Blockchain</h3>
+    <ul> 
+        <li> <input id="input1" type="button" onclick="loadXMLDoc()" value="getbestblockhash" /></li> <!-- -->
+        <div name ="result" >
+            {{.result}}
+        </div>
+        <li value="getbestblock">getbestblock</li>
+        <li>getblockchaininfo</li>
+        <li>getblockcount</li>
+        <li>getbessthash</li>
+        <li>getblockhash + height</li>
+        <li>getdifficulty</li>
+        <li>getchaintips</li>
+        <li>getaddressinfo</li>
+    </ul>
+    <h3>Control</h3>
+    <ul>
+        <li>help</li>
+        <li>stop</li>
+        <li>uptime</li>
+    </ul>
+    <h3>Network</h3>
+    <ul>
+        <li>ping</li>
+    </ul>
+    <h3>Wallet</h3>
+    <ul>
+        <li>getbalance</li>
+        <li>getbalances</li>
+    </ul>
+</div>
+
+</body>
+<script type="text/javascript">
+
+    function loadXMLDoc()
+    {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function(){
+            if(xmlhttp.readyState == 4 && xhr.state == 200){
+                alter("请求已全部执行，并且成功");
+            }
+        }
+        var loginbut = document.getElementById("input1")
+        var loginbutvalue = loginbut.valueOf("getbestblockhash")
+
+        xmlhttp.open("POST","/home",true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("Method"+loginbutvalue);
+    }
+
+</script>
+</html>

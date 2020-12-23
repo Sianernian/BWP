@@ -3,10 +3,9 @@
 package rpcUtils
 
 import (
-<<<<<<< HEAD:rpcUtils/rpcServer.go
-=======
+
 	"BWP/models/rpc"
->>>>>>> cb80201b17e5d22746ef5f6c0f7f2b73b23842bf:utils/rpcUtils/rpcServer.go
+
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"io/ioutil"

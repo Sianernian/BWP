@@ -3,9 +3,7 @@
 package rpcUtils
 
 import (
-
 	"BWP/models/rpc"
-
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"io/ioutil"
